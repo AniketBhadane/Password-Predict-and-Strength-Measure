@@ -112,9 +112,13 @@ Algorithm for finding next top 3 most likely choices:
 1.	Detect change in the input
 2.	Check whether user typed one of the next likely choices. Update prediction status.
 3.	For n-1 times: for(i = 0; i < n-1; i++)
+	
 	a.	Get substring from input: (length - n + 1 + i) ... (length-1) :– see below image
+	
 	b.	Search the trie for prefix (substring). Get TrieNode corresponding to last character of string.
+	
 	c.	Find 3 children of the TrieNode, with the highest weight among the siblings.
+	
 	d.	If all three next likely choices are found, then break, else repeat till all choices are found or loop completes
 
 Password Strength can be calculated after user finishes typing the password, on a button click.
