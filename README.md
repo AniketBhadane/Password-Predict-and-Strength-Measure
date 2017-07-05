@@ -61,6 +61,16 @@ Method 2:
 7. If you don't get the message: "rockyou-withcount.txt is not present in root directory of project" 
    on top of the application, it means you've copied the rockyou-withcount.txt file right.
    
+
+This project has been developed in Java using Eclipse IDE.
+
+It mainly contains three files:
+
+Passwd.java (which has main method)
+
+Trie.java (Utility class for performing operations on Trie)
+
+TrieNode.java (TrieNode class)
    
 There are a total of 32,603,387 plaintext passwords on the RockYou list, including duplicates. 
 There are 14,344,391 unique passwords.
@@ -73,24 +83,24 @@ Reading each password from rockyou-withcount.txt, creating n-grams for the passw
 
 Trie Node structure:
 
-class TrieNode {
-	
-    char c;
+	class TrieNode {
+		
+		char c;
 
-    // weight is frequency of the character as part of the n-gram
-    // higher weight will be given more preference when finding next likely choices
-    int weight;
-    
-    HashMap<Character, TrieNode> children = new HashMap<Character, TrieNode>();
+		// weight is frequency of the character as part of the n-gram
+		// higher weight will be given more preference when finding next likely choices
+		int weight;
+		
+		HashMap<Character, TrieNode> children = new HashMap<Character, TrieNode>();
 
-    public TrieNode() {}
+		public TrieNode() {}
 
-    public TrieNode(char c, int weight) {
-        this.c = c;
-        this.weight = weight;
-    }
-    
-}
+		public TrieNode(char c, int weight) {
+			this.c = c;
+			this.weight = weight;
+		}
+		
+	}
 
 Algorithm for creating Trie with n-grams of passwords with their frequencies:
 1.	Read passwords and their frequency from rockyou-withcount.txt one by one.
@@ -108,8 +118,11 @@ Algorithm for finding next top 3 most likely choices:
 	d.	If all three next likely choices are found, then break, else repeat till all choices are found or loop completes
 
 Password Strength can be calculated after user finishes typing the password, on a button click.
+
 A very naïve formula: 
+
 strength = number of user chosen characters not predicted correctly by system  / length of password
+
 This needs to be improved upon.
 
  
